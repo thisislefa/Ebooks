@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lumina | Digital Library</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined|Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="preloader"><div class="spinner"></div></div>
+
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="#" class="logo" onclick="resetView()">
+                Ebooks
+            </a>
+            <div class="nav-actions">
+                <div class="nav-btn desktop-only" onclick="toggleDrawer('collections')">Collections</div>
+                <div class="nav-btn" onclick="toggleDrawer('library')">
+                    <span style="display: flex; align-items: center; gap: 6px;">
+                        <span class="material-icons-outlined" style="font-size: 20px;">bookmarks</span>
+                        <span class="desktop-only">My Library</span>
+                    </span>
+                </div>
+                <button class="nav-btn btn-primary" onclick="showToast('Demo Mode: Backend not connected')">Sign In</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>Unlock knowledge.<br>Anytime, anywhere.</h1>
+            <div class="search-container">
+                <span class="material-icons-outlined search-icon">search</span>
+                <input type="text" class="search-input" id="searchInput" placeholder="Search by title, author, or topic...">
+            </div>
+        </section>
+
+        <section class="container" style="margin-top: 40px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px;">
+                <h2 id="galleryTitle" style="font-size: 22px; color: #1f1f1f;">Trending Now</h2>
+                <span style="font-size: 13px; color: #5f6368;" id="resultCount"></span>
+            </div>
+            
+            <div class="gallery-grid" id="galleryGrid">
+                </div>
+
+            <div class="pagination-container" id="paginationControls"></div>
+
+        </section>
+    </main>
+
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+    <div class="drawer" id="sideDrawer">
+        <div class="drawer-header">
+            <h3 id="drawerTitle">Menu</h3>
+            <span class="material-icons-outlined" style="cursor: pointer;" onclick="closeDrawer()">close</span>
+        </div>
+        <div class="drawer-body" id="drawerContent">
+            </div>
+    </div>
+
+    <div id="toast" class="toast">
+        <span class="material-icons-outlined">info</span>
+        <span id="toastMsg">Notification</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
