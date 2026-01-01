@@ -6,7 +6,7 @@ Lumina Ebooks is a sophisticated client-side digital library interface engineere
 
 ## Live Deployment
 
-[View Live Demo & Download Books Here](https://thisislefa.github.io/Ebooks)
+[Preview Live Demo & Download Ebooks](https://thisislefa.github.io/Ebooks)
 
 ## Architecture & Technical Implementation
 
